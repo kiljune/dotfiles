@@ -85,5 +85,6 @@ alias rm='rm -i'
 alias fzf="fzf --color=dark --preview='cat {}'"
 
 # Shell integrations
-eval "$(fzf --zsh)"
+#eval "$(fzf --zsh)"
+source <(fzf --zsh)
 #eval "$(zoxide init --cmd cd zsh)"
