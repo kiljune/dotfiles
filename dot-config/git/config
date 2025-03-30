@@ -26,12 +26,6 @@
 	required = true
 	smudge = "git-lfs smudge --skip -- %f"
 
-[gpg]
-	format = "openpgp"
-
-[gpg "openpgp"]
-	program = "/nix/store/pggww1d2pg24fcg5v36xn63n53vanyyi-gnupg-2.4.7/bin/gpg"
-
 [init]
 	defaultBranch = "main"
 
