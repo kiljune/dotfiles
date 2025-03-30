@@ -10,7 +10,7 @@ if status is-interactive
     alias lla='ls -la'
     alias lt='ls --tree'
     alias rm='rm -i'
-    alias fzf="fzf --color=dark --preview='bat {}'"
+    alias fzf="fzf --style full --color=dark --preview='bat -n --color=always {}'"
 
     fzf --fish | source
     starship init fish | source
