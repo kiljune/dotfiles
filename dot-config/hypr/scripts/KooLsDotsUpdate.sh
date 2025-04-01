@@ -5,7 +5,7 @@
 local_dir="$HOME/.config/hypr"
 iDIR="$HOME/.config/swaync/images/ja.png"
 local_version=$(ls $local_dir/v* 2>/dev/null | sort -V | tail -n 1 | sed 's/.*v\(.*\)/\1/')
-KooL_Dots_DIR="$HOME/Hyprland-Dots"
+KooL_Dots_DIR="$HOME/dotfiles"
 
 # exit if cannot find local version
 if [ -z "$local_version" ]; then
@@ -15,7 +15,7 @@ fi
 
 # GitHub URL - KooL's dots
 branch="main"
-github_url="https://github.com/JaKooLit/Hyprland-Dots/tree/$branch/config/hypr/"
+github_url="https://github.com/kiljune/dotfiles/tree/$branch/dot-config/hypr/"
 
 # Fetch the version from GitHub URL - KooL's dots
 github_version=$(curl -s $github_url | grep -o 'v[0-9]\+\.[0-9]\+\.[0-9]\+' | sort -V | tail -n 1 | sed 's/v//')
@@ -57,7 +57,7 @@ else
   			exit 1
 		fi
         kitty -e bash -c "
-          git clone --depth=1 https://github.com/JaKooLit/Hyprland-Dots.git $KooL_Dots_DIR &&
+          git clone --depth=1 https://github.com/kiljune/dotfiles.git $KooL_Dots_DIR &&
           cd $KooL_Dots_DIR &&
           chmod +x copy.sh &&
           ./copy.sh &&
