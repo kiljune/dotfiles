@@ -1,5 +1,4 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
 # For Rofi Beats to play online Music or Locally save media files
 
 # Variables
