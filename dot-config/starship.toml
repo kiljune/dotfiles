@@ -1,3 +1,130 @@
+command_timeout = 1000
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$directory$all
+$character"""
+
+#right_format = """$all"""
+
+palette = "catppuccin_mocha"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+# [palettes.custom]
+# rosewater = "#f5e0dc"
+# flamingo = "#eb6f92"
+# pink = "#f5c2e7"
+# orange = "#cba6f7"
+# color_red = '#cc241d'
+# red = "#f38ba8"
+# maroon = "#eba0ac"
+# peach = "#fab387"
+# yellow = "#f9e2af"
+# green = "#a6e3a1"
+# teal = "#94e2d5"
+# sky = "#89dceb"
+# sapphire = "#74c7ec"
+# blue = "#89b4fa"
+# lavender = "#b4befe"
+# foam = "#9ccfd8"
+# pine = "#31748f"
+# gold = "#f6c177"
+# rose = "#ebbcba"
+# text = "#cdd6f4"
+# subtext1 = "#bac2de"
+# subtext0 = "#a6adc8"
+# overlay2 = "#9399b2"
+# overlay1 = "#7f849c"
+# overlay0 = "#6c7086"
+# surface2 = "#585b70"
+# surface1 = "#45475a"
+# surface0 = "#313244"
+# base = "#1e1e2e"
+# mantle = "#181825"
+# crust = "#11111b"
+
+[username]
+#show_always = true
+
+[directory]
+style = "sapphire"
+read_only = " 󰌾"
+#truncation_length = 4
+#truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[os]
+disabled = true
+#style = "bg:surface0 fg:text"
+
+[custom.giturl]
+# disabled = true
+description = "Display symbol for remote Git server"
+command = """
+GIT_REMOTE=$(command git ls-remote --get-url 2> /dev/null)
+if [[ "$GIT_REMOTE" =~ "github" ]]; then
+    GIT_REMOTE_SYMBOL=" "
+elif [[ "$GIT_REMOTE" =~ "gitlab" ]]; then
+    GIT_REMOTE_SYMBOL=" "
+elif [[ "$GIT_REMOTE" =~ "bitbucket" ]]; then
+    GIT_REMOTE_SYMBOL=" "
+elif [[ "$GIT_REMOTE" =~ "git" ]]; then
+    GIT_REMOTE_SYMBOL=" "
+else
+    GIT_REMOTE_SYMBOL=" "
+fi
+echo "$GIT_REMOTE_SYMBOL "
+"""
+when = 'git rev-parse --is-inside-work-tree 2> /dev/null'
+
+[line_break]
+disabled = true 
+
+#[character]
+#disabled = false
+#success_symbol = '[❯](bold fg:green)'
+#error_symbol = '[❯](bold fg:red)'
+#vimcmd_symbol = '[](bold fg:creen)'
+#vimcmd_replace_one_symbol = '[](bold fg:purple)'
+#vimcmd_replace_symbol = '[](bold fg:purple)'
+#vimcmd_visual_symbol = '[](bold fg:lavender)'
+
 [aws]
 symbol = "  "
 
@@ -19,11 +146,8 @@ symbol = " "
 [dart]
 symbol = " "
 
-[directory]
-read_only = " 󰌾"
-
 [docker_context]
-symbol = " "
+symbol = ""
 
 [elixir]
 symbol = " "
@@ -38,19 +162,24 @@ symbol = " "
 symbol = " "
 
 [git_branch]
-symbol = " "
+symbol = "[](black) "
+style = "fg:lavender bg:black"
 
 [git_commit]
 tag_symbol = '  '
 
 [golang]
-symbol = " "
+symbol = ""
+detect_files = ["go.mod"]
+
+[gradle]
+symbol = " "
 
 [guix_shell]
 symbol = " "
 
 [haskell]
-symbol = " "
+symbol = ""
 
 [haxe]
 symbol = " "
@@ -68,7 +197,7 @@ symbol = " "
 symbol = " "
 
 [kotlin]
-symbol = " "
+symbol = ""
 
 [lua]
 symbol = " "
@@ -86,10 +215,47 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = ""
 
 [ocaml]
 symbol = " "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = ""
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = ""
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = ""
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[time]
+disabled = true
+style = "bg:peach"
+
+[zig]
+symbol = " "
 
 [os.symbols]
 Alpaquita = " "
@@ -138,38 +304,3 @@ Unknown = " "
 Void = " "
 Windows = "󰍲 "
 
-[package]
-symbol = "󰏗 "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[pijul_channel]
-symbol = " "
-
-[python]
-symbol = " "
-
-[rlang]
-symbol = "󰟔 "
-
-[ruby]
-symbol = " "
-
-[rust]
-symbol = "󱘗 "
-
-[scala]
-symbol = " "
-
-[swift]
-symbol = " "
-
-[zig]
-symbol = " "
-
-[gradle]
-symbol = " "
