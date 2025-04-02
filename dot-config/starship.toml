@@ -220,43 +220,6 @@ symbol = ""
 [ocaml]
 symbol = " "
 
-[package]
-symbol = "󰏗 "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = ""
-
-[pijul_channel]
-symbol = " "
-
-[python]
-symbol = ""
-
-[rlang]
-symbol = "󰟔 "
-
-[ruby]
-symbol = " "
-
-[rust]
-symbol = ""
-
-[scala]
-symbol = " "
-
-[swift]
-symbol = " "
-
-[time]
-disabled = true
-style = "bg:peach"
-
-[zig]
-symbol = " "
-
 [os.symbols]
 Alpaquita = " "
 Alpine = " "
@@ -303,4 +266,41 @@ Ubuntu = " "
 Unknown = " "
 Void = " "
 Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = ""
+
+[pijul_channel]
+symbol = " "
+
+[python]
+symbol = ""
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = ""
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[time]
+disabled = true
+style = "bg:peach"
+
+[zig]
+symbol = " "
 
