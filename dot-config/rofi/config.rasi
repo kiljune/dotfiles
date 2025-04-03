@@ -1,4 +1,4 @@
-* All main themes or configs are located in ~/.config/rofi/themes/
+/* All main themes or configs are located in ~/.config/rofi/themes/
 * If you want to edit the config, that is where you should edit NOT here 
 
 * To load a new theme, manually edit the file path below or choose desired theme via rofi theme selector (choose via app menu)
