@@ -2,7 +2,7 @@
 size = 15.0
 
 [font.normal]
-family = "FiraCode"
+family = "FiraCode Nerd Font Mono"
 style = "Regular"
 
 [window]
