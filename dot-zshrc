@@ -1,90 +1,18 @@
-# ZINIT setup
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
+# --------------------------------------------
+# Load modular configuration
+# --------------------------------------------
 
-# Load starship theme
-# line 1: `starship` binary as command, from github release
-# line 2: starship setup at clone(create init.zsh, completion)
-# line 3: pull behavior same as clone, source init.zsh
-#zinit ice as"command" from"gh-r" \
-#          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-#          atpull"%atclone" src"init.zsh"
-#zinit light starship/starship
+for f in ~/.config/zshrc/*; do
+    if [ ! -d $f ]; then
+        c='echo $f | sed -e "s=.config/zshrc=.config/zshrc/custom="'
+	[[ -f $c ]] && source $c || source $f
+    fi
+done
 
-zinit ice depth=1
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+# --------------------------------------------
+# Load single customization file (if exists)
+# --------------------------------------------
 
-# Add in snippets
-zinit snippet OMZL::git.zsh
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/kiljune/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-
-zinit cdreplay -q
-
-# Lines configured by zsh-newuser-install
-# Keybindings
-bindkey -v
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-bindkey '^[w' kill-region
-
-# History
-HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-
-setopt autocd beep extendedglob nomatch notify
-
-# End of lines configured by zsh-newuser-install
-
-# Completion styling
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-#zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-# Display Pokemon-colorscripts
-# Project page: https://gitlab.com/phoneybadger/pokemon-colorscripts#on-other-distros-and-macos
-#pokemon-colorscripts --no-title -s -r #without fastfetch
-#pokemon-colorscripts --no-title -s -r | fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc --logo-type file-raw --logo-height 10 --logo-width 5 --logo -
-
-# fastfetch. Will be disabled if above colorscript was chosen to install
-fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc --logo none
-
-# Aliases
-#alias ls='ls --color'
-#alias ll='ls -l'
-#alias la='ls -la'
-alias ls='lsd'
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-alias lt='ls --tree'
-alias rm='rm -i'
-alias fzf="fzf --style full --color=dark --preview='bat -n --color=always {}'"
-
-# Shell integrations
-eval "$(fzf --zsh)"
-eval "$(starship init zsh)"
-#eval "$(zoxide init --cmd cd zsh)"
+if [ -f ~/.zshrc_custom ]; then
+    source ~/.zshrc_custom
+fi
