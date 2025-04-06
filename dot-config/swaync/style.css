@@ -6,7 +6,8 @@
 @define-color noti-bg rgba(0, 0, 0, 0.8);
 @define-color noti-bg-alt @background-alt;
 @define-color noti-bg-hover @background;
-@define-color text-color @foreground;
+/*@define-color text-color @foreground;*/
+@define-color text-color @text
 
 * {
     font-family: "JetBrains Mono Nerd Font";
@@ -26,11 +27,11 @@
 }
 
 .notification {
-	border-radius: 10px;
+    border-radius: 10px;
 }
 
 .notification-content{
-	/*color: @text-color;*/
+    /*color: @text-color;*/
     background: @noti-bg;
     padding: 3px 10px 3px 6px;
     border-radius: 10px;
