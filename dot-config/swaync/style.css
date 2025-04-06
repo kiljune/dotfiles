@@ -1,6 +1,6 @@
 /* swaync colors - wallust from waybar.css */
 
-@import '../../.config/waybar/wallust/colors-waybar.css';
+@import '../waybar/wallust/colors-waybar.css';
 
 @define-color noti-border-color @color12;
 @define-color noti-bg rgba(0, 0, 0, 0.8);

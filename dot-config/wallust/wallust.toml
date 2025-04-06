@@ -48,8 +48,8 @@ waybar.target = '~/.config/waybar/wallust/colors-waybar.css'
 kitty.template = 'colors-kitty.conf'
 kitty.target = '~/.config/kitty/kitty-colors.conf'
 
-swaync.template = 'colors-swaync.css'
-swaync.target = '~/.config/swaync/colors-wallust.css'
+#swaync.template = 'colors-swaync.css'
+#swaync.target = '~/.config/swaync/colors-wallust.css'
 
 #macchina.template = 'colors-macchina.toml'
 #macchina.target = '~/.config/macchina/themes/wallust.toml'
