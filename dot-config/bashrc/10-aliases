@@ -19,6 +19,10 @@ alias lla='ls -la'
 alias lt='ls --tree'
 alias rm='rm -i'
 alias fzf="fzf --style full --color=dark --preview='bat -n --color=always {}'"
+alias ff='fastfetch'
+alias v='$EDITOR'
+alias vim='$EDITOR'
+alias c='clear'
 #alias l='ls -CF'
 
 # Alias definitions.
