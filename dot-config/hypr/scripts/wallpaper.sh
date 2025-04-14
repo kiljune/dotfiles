@@ -104,34 +104,17 @@ else
 fi
 
 # -----------------------------------------------------
-# Execute pywal
+# Execute wallust
 # -----------------------------------------------------
 
-echo ":: Execute pywal with $used_wallpaper"
-wal -q -i "$used_wallpaper"
-source "$HOME/.cache/wal/colors.sh"
-
-# -----------------------------------------------------
-# Walcord (NOT SUPPORTED)
-# -----------------------------------------------------
-
-if type walcord >/dev/null 2>&1; then
-    walcord
-fi
+wcho ":: Execute wallust with $used_wallpaper"
+wallust run "$used_wallpaper" -s
 
 # -----------------------------------------------------
 # Reload Waybar
 # -----------------------------------------------------
 
 killall -SIGUSR2 waybar
-
-# -----------------------------------------------------
-# Update Pywalfox
-# -----------------------------------------------------
-
-if type pywalfox >/dev/null 2>&1; then
-    pywalfox update
-fi
 
 # -----------------------------------------------------
 # Update SwayNC

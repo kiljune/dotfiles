@@ -14,7 +14,7 @@
 # Set defaults
 # -----------------------------------------------------
 
-defaultwallpaper="$HOME/wallpaper/default.jpg"
+defaultwallpaper="$HOME/Pictures/wallpaper/default.jpg"
 cachefile="$HOME/.config/ml4w/cache/current_wallpaper"
 
 # -----------------------------------------------------
