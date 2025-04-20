@@ -1,5 +1,6 @@
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/kiljune/.zshrc'
+#zstyle :compinstall filename '/home/kiljune/.zshrc'
+zstyle :compinstall filename '/home/kiljune/.config/zshrc/30-compinstall'
 
 autoload -Uz compinit
 compinit
