@@ -7,6 +7,11 @@
 # the default umask is set in /etc/profile; for setting the umask
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
+export EDITOR=nvim
+
+# SSH_AUTH_SOCK set to GPG to enable using gpgagent as the ssh agent.
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
