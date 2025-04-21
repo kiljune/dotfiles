@@ -1,7 +1,27 @@
+# Set the GPG_TTY to be the same as the TTY, either via the env var
+# or via the tty command.
+if [ -n "$TTY" ]; then
+  export GPG_TTY=$(tty)
+else
+  export GPG_TTY="$TTY"
+fi
+
+if [[ -f "/opt/homebrew/bin/brew" ]] then
+  # If you're using macOS, you'll want this enabled
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+if [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]] then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 # ZINIT setup
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+if [ ! -d $ZINIT_HOME ]; then
+  mkdir -p "$(dirname $ZINIT_HOME)"
+  git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
 source "${ZINIT_HOME}/zinit.zsh"
 
 # Load starship theme
@@ -23,5 +43,5 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
-
-zinit cdreplay -q
+#zinit snippet OMZP::archlinux
+zinit snippet OMZP::command-not-found

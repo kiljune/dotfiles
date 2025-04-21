@@ -6,6 +6,8 @@ bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
+zle_highlight+=(paste:nome)
+
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
