@@ -54,13 +54,6 @@
     "separate-outputs": true
   },
 
-  // ML4W Welcome App
-  "custom/ml4w-welcome": {
-    "on-click": "flatpak run com.ml4w.sidebar",
-    "format": " ",
-    "tooltip-format": "Open ML4W Sidebar App"
-  },
-
   // Empty
   "custom/empty": {
     "format": ""
@@ -105,13 +98,6 @@
     "format": "",
     "on-click": "~/.config/waybar/themeswitcher.sh",
     "tooltip-format": "Select a waybar theme"
-  },
-
-  // Settings
-  "custom/settings": {
-    "format": "",
-    "on-click": "sleep 0.1 && com.ml4w.dotfilessettings",
-    "tooltip-format": "ML4W Dotfiles Settings"
   },
 
   // Keybindings
