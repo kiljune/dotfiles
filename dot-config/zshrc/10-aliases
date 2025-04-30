@@ -8,6 +8,4 @@ alias rm='rm -i'
 alias fzf="fzf --style full --color=dark --preview='bat -n --color=always {}'"
 alias ..='cd ..'
 alias ff='fastfetch'
-alias v='$EDITOR'
-alias vim='$EDITOR'
 alias c='clear'
