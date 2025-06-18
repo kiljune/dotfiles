@@ -57,4 +57,4 @@ zinit snippet OMZL::git.zsh
 zinit snippet OMZP::sudo
 #zinit snippet OMZP::archlinux
 #zinit snippet OMZP::debian
-zinit snippet OMZP::command-not-found
+#zinit snippet OMZP::command-not-found
