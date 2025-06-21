@@ -9,3 +9,6 @@ alias fzf="fzf --style full --color=dark --preview='bat -n --color=always {}'"
 alias ..='cd ..'
 alias ff='fastfetch'
 alias c='clear'
+if [[ -f /sbin/apk ]]; then
+  alias sudo='doas'
+fi
