@@ -8,7 +8,7 @@ format = """
 $hostname$directory$all
 $character"""
 
-#right_format = """$all"""
+right_format = """$time"""
 
 palette = "catppuccin_mocha"
 
@@ -300,8 +300,8 @@ symbol = " "
 symbol = " "
 
 [time]
-disabled = true
-style = "bg:peach"
+disabled = false
+style = "fg:blue"
 
 [zig]
 symbol = " "
