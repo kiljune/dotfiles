@@ -69,7 +69,7 @@
     },
     "custom/lock": {
         "tooltip": false,
-        "on-click": "hyprlock &",
+        "on-click": "swaylock &",
         "format": " "
     },
     "custom/power": {
