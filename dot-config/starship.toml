@@ -5,10 +5,10 @@ command_timeout = 1000
 add_newline = true
 
 format = """
-$hostname$directory$all
+$hostname$directory$all$time
 $character"""
 
-right_format = """$time"""
+#right_format = """$time"""
 
 palette = "catppuccin_mocha"
 
