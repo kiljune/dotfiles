@@ -1,410 +1,507 @@
-* {
-  border: none;
-  border-radius: 10;
-  font-family: "JetbrainsMono Nerd Font";
-  font-size: 15px;
-  min-height: 10px;
+/*
+ * __        __          _                  ____  _         _
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___|
+ *                 |___/                              |___/
+ *
+ * -----------------------------------------------------
+*/
+
+/* -----------------------------------------------------
+ * Import Pywal colors
+ * ----------------------------------------------------- */
+/* @import 'style-light.css'; */
+@import './wallust/colors-waybar.css';
+
+@define-color backgroundlight @color5;
+@define-color backgrounddark @color11;
+@define-color workspacesbackground1 @color5;
+@define-color workspacesbackground2 @color11;
+@define-color bordercolor @color11;
+@define-color textcolor1 #FFFFFF;
+@define-color textcolor2 #FFFFFF;
+@define-color textcolor3 #FFFFFF;
+@define-color iconcolor #FFFFFF;
+
+/* -----------------------------------------------------
+ * General
+ * ----------------------------------------------------- */
+
+ * {
+    font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 0px;
 }
 
 window#waybar {
-  background: transparent;
+    background-color: rgba(0,0,0,0.8);
+    border-bottom: 0px solid #ffffff;
+    /* color: #FFFFFF; */
+    background: transparent;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
-#network {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#network:hover {
-  color: #292c3c;
-  background: #bd93f9;
-}
-
-#cava {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#cava:hover {
-  color: #292c3c;
-  background: #bd93f9;
-}
-
-#battery {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#battery:hover {
-  color: #292c3c;
-  background: #bd93f9;
-}
-
-#backlight:hover {
-  color: #292c3c;
-  background: #bd93f9;
-}
-
-#backlight {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#language {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#language:hover {
-  color: #292c3c;
-  background: #bd93f9;
-}
-
-#pulseaudio {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  padding: 8px;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#pulseaudio:hover {
-  background: #bd93f9;
-  color: #292c3c;
-}
-
-#pulseaudio.muted {
-  color: #f38ba8;
-  background: #292c3c;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #f38ba8;
-  transition: 0.3s;
-}
-
-#pulseaudio.muted:hover {
-  background: #f38ba8;
-  color: #292c3c;
-
-}
-
-#clock {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#clock:hover {
-  color: #292c3c;
-  background: #bd93f9;
-}
-
-#disk {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#disk:hover {
-  color: #292c3c;
-  background: #bd93f9;
-}
-
-#privacy {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#idle_inhibitor {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#idle_inhibitor.activated {
-  color: #89b4fa;
-  border-color: #89b4fa;
-}
-
-#idle_inhibitor.activated:hover {
-  background: #89b4fa;
-  color: #292c3c;
-  border-color: #89b4fa;
-}
-
-#idle_inhibitor.deactivated {
-  color: #bd93f9
-}
-
-#idle_inhibitor.deactivated:hover {
-  color: #292c3c;
-  background: #bd93f9;
-}
-
-#memory {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  margin-bottom: 0px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#memory:hover {
-  color: #292c3c;
-  background: #bd93f9;
-
-}
-
-#cpu {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  margin-bottom: 0px;
-  padding-right: 10px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#cpu:hover {
-  color: #292c3c;
-  background: #bd93f9;
-
-}
-
-#custom-launcher {
-  font-size: 20px;
-  margin-top: 10px;
-  margin-left: 17px;
-  padding-left: 10px;
-  padding-right: 5px;
-  border-radius: 10px;
-  transition: none;
-  color: #bd93f9;
-  background: #292c3c;
-  transition: 0.3s;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-}
-
-#custom-launcher:hover {
-  background: #bd93f9;
-  color: #292c3c;
-}
-
-#network.disconnected {
-  color: #f38ba8;
-  background: #292c3c;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #f38ba8;
-}
-
-#network.disconnected:hover {
-  background: #f38ba8;
-  color: #292c3c;
-}
-
-#custom-lock {
-  font-size: 15px;
-  margin-top: 10px;
-  margin-left: 8px;
-  margin-right: 17px;
-  padding-left: 10px;
-  padding-right: 5px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
-}
-
-#custom-lock:hover {
-
-  background: #f38ba8;
-  color: #292c3c;
-  border-color: #f38ba8;
-
-}
+/* -----------------------------------------------------
+ * Workspaces
+ * ----------------------------------------------------- */
 
 #workspaces {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-right: 4px;
-  background: #292c3c;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  color: #bd93f9;
-  transition: 0.3s;
+    background: @workspacesbackground1;
+    margin: 2px 18px 3px 1px;
+    padding: 0px 2px;
+    border-radius: 5px 5px 5px 5px;
+    font-weight: bold;
+    font-style: normal;
+    opacity: 0.8;
+    color: @textcolor1;
 }
 
 #workspaces button {
-  color: #bd93f9;
-  transition: 0.3s;
-}
-
-#workspaces button:hover {
-  background: transparent;
-  color: transparent;
+    padding: 0px 6px;
+    margin: 3px 2px;
+    border-radius: 3px 3px 3px 3px;
+    color: @textcolor1;
+    background-color: @workspacesbackground2;
+    transition: all 0.1s linear;
+    opacity: 0.4;
 }
 
 #workspaces button.active {
-  color: #b4befe;
-  transition: 0.3s;
+    color: @textcolor1;
+    background: @workspacesbackground2;
+    border-radius: 3px 3px 3px 3px;
+    min-width: 30px;
+    transition: all 0.1s linear;
+    opacity:1.0;
 }
+
+#workspaces button:hover {
+    color: @textcolor1;
+    background: @workspacesbackground2;
+    border-radius: 5px 5px 5px 5px;
+    opacity:0.7;
+}
+
+/* -----------------------------------------------------
+ * Tooltips
+ * ----------------------------------------------------- */
+
+tooltip {
+    border-radius: 16px;
+    background-color: @backgroundlight;
+    opacity:0.9;
+    padding:20px;
+    margin:0px;
+}
+
+tooltip label {
+    color: @textcolor2;
+}
+
+/* -----------------------------------------------------
+ * Window
+ * ----------------------------------------------------- */
+
+#window {
+    margin: 3px 15px 3px 0px;
+    padding: 2px 10px 0px 10px;
+    border-radius: 5px 5px 5px 5px;
+    color:white;
+    font-size:16px;
+    font-weight:normal;
+    opacity:0.8;
+}
+
+window#waybar.empty #window {
+    background-color:transparent;
+}
+
+/* -----------------------------------------------------
+ * Taskbar
+ * ----------------------------------------------------- */
+
+#taskbar {
+    background: @backgroundlight;
+    margin: 3px 15px 3px 0px;
+    padding:0px;
+    border-radius: 5px 5px 5px 5px;
+    font-weight: normal;
+    font-style: normal;
+    opacity:0.8;
+    border: 3px solid @backgroundlight;
+}
+
+#taskbar button {
+    margin:0;
+    border-radius: 5px 5px 5px 5px;
+    padding: 0px 5px 0px 5px;
+}
+
+#taskbar.empty {
+    background:transparent;
+    border:0;
+    padding:0;
+    margin:0;
+}
+
+/* -----------------------------------------------------
+ * Modules
+ * ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+/* -----------------------------------------------------
+ * Custom Quicklinks
+ * ----------------------------------------------------- */
+
+#custom-brave,
+#custom-browser,
+#custom-keybindings,
+#custom-outlook,
+#custom-filemanager,
+#custom-teams,
+#custom-chatgpt,
+#custom-calculator,
+#custom-windowsvm,
+#custom-cliphist,
+#custom-settings,
+#custom-wallpaper,
+#custom-system,
+#custom-hyprshade,
+#custom-hypridle,
+#custom-tools,
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-quicklink5,
+#custom-quicklink6,
+#custom-quicklink7,
+#custom-quicklink8,
+#custom-quicklink9,
+#custom-quicklink10,
+#custom-quicklink_chromium,
+#custom-quicklink_edge,
+#custom-quicklink_firefox,
+#custom-quicklink_browser,
+#custom-quicklink_filemanager,
+#custom-quicklink_email,
+#custom-quicklink_thunderbird,
+#custom-quicklink_calculator,
+#custom-waybarthemes {
+    margin-right: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: @iconcolor;
+}
+
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-quicklink5,
+#custom-quicklink6,
+#custom-quicklink7,
+#custom-quicklink8,
+#custom-quicklink9,
+#custom-quicklink10 {
+    margin-right: 24px;
+}
+
+#custom-tools {
+    margin-right:12px;
+}
+
+#custom-hypridle.active {
+    color: @iconcolor;
+}
+
+#custom-hypridle.notactive {
+    color: #dc2f2f;
+}
+
+#custom-ml4w-welcome {
+    margin-right: 12px;
+    background-image: url("../assets/ml4w-icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-right: 20px;
+}
+
+#custom-chatgpt {
+    margin-right: 16px;
+    background-image: url("../assets/openai.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding-right: 18px;
+    opacity: 0.8;
+}
+
+/* -----------------------------------------------------
+ * Idle Inhibator
+ * ----------------------------------------------------- */
+
+#idle_inhibitor {
+    margin-right: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: @iconcolor;
+}
+
+#idle_inhibitor.activated {
+    margin-right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+    color: #dc2f2f;
+}
+
+/* -----------------------------------------------------
+ * Custom Modules
+ * ----------------------------------------------------- */
+
+#custom-appmenu {
+    background-color: @backgrounddark;
+    font-size: 16px;
+    color: @textcolor1;
+    border-radius: 5px 5px 5px 5px;
+    padding: 0px 10px 0px 10px;
+    margin: 2px 17px 2px 0px;
+    opacity:0.8;
+    border:3px solid @bordercolor;
+}
+
+/* -----------------------------------------------------
+ * Custom Notification
+ * ----------------------------------------------------- */
+
+ #custom-notification {
+    margin: 0px 13px 0px 0px;
+    padding:0px;
+    font-size:20px;
+    color: @iconcolor;
+    opacity: 0.8;
+}
+
+/* -----------------------------------------------------
+ * Custom Exit
+ * ----------------------------------------------------- */
+
+#custom-exit {
+    margin: 0px 13px 0px 0px;
+    padding:0px;
+    font-size:20px;
+    color: @iconcolor;
+    opacity: 0.8;
+}
+
+/* -----------------------------------------------------
+ * Custom Updates
+ * ----------------------------------------------------- */
+
+#custom-updates {
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor2;
+    border-radius: 5px 5px 5px 5px;
+    padding: 2px 10px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity:0.8;
+}
+
+#custom-updates.green {
+    background-color: @backgroundlight;
+}
+
+#custom-updates.yellow {
+    background-color: #ff9a3c;
+    color: #FFFFFF;
+}
+
+#custom-updates.red {
+    background-color: #dc2f2f;
+    color: #FFFFFF;
+}
+
+/* -----------------------------------------------------
+ * Hardware Group
+ * ----------------------------------------------------- */
+
+#disk,#memory,#cpu,#language {
+    margin:0px;
+    padding:0px;
+    font-size:16px;
+    color:@iconcolor;
+}
+
+#language {
+    margin-right:10px;
+}
+
+/* -----------------------------------------------------
+ * Power Profiles Daemon
+ * ----------------------------------------------------- */
+
+#power-profiles-daemon {
+    margin: 0px 13px 0px 0px;
+    padding:0px;
+    font-size:16px;
+    color:@iconcolor;
+}
+
+/* -----------------------------------------------------
+ * Clock
+ * ----------------------------------------------------- */
+
+#clock {
+    background-color: @backgrounddark;
+    font-size: 16px;
+    color: @textcolor1;
+    border-radius: 3px 5px 3px 5px;
+    padding: 1px 10px 0px 10px;
+    margin: 3px 0px 3px 0px;
+    opacity:0.8;
+    border:3px solid @bordercolor;
+}
+
+/* -----------------------------------------------------
+ * Backlight
+ * ----------------------------------------------------- */
+
+#backlight {
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor2;
+    border-radius: 5px 5px 5px 5px;
+    padding: 2px 10px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity:0.8;
+}
+
+/* -----------------------------------------------------
+ * Pulseaudio
+ * ----------------------------------------------------- */
+
+#pulseaudio {
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor2;
+    border-radius: 5px 5px 5px 5px;
+    padding: 2px 10px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity:0.8;
+}
+
+#pulseaudio.muted {
+    background-color: @backgrounddark;
+    color: @textcolor1;
+}
+
+/* -----------------------------------------------------
+ * Network
+ * ----------------------------------------------------- */
+
+#network {
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor2;
+    border-radius: 5px 5px 5px 5px;
+    padding: 2px 10px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity:0.8;
+}
+
+#network.ethernet {
+    background-color: @backgroundlight;
+    color: @textcolor2;
+}
+
+#network.wifi {
+    background-color: @backgroundlight;
+    color: @textcolor2;
+}
+
+/* -----------------------------------------------------
+ * Bluetooth
+ * ----------------------------------------------------- */
+
+#bluetooth, #bluetooth.on, #bluetooth.connected {
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor2;
+    border-radius: 5px 5px 5px 5px;
+    padding: 2px 10px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity:0.8;
+}
+
+#bluetooth.off {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* -----------------------------------------------------
+ * Battery
+ * ----------------------------------------------------- */
+
+#battery {
+    background-color: @backgroundlight;
+    font-size: 16px;
+    color: @textcolor2;
+    border-radius: 5px 5px 5px 5px;
+    padding: 2px 15px 0px 10px;
+    margin: 3px 15px 3px 0px;
+    opacity:0.8;
+}
+
+#battery.charging, #battery.plugged {
+    color: @textcolor2;
+    background-color: @backgroundlight;
+}
+
+@keyframes blink {
+    to {
+        background-color: @backgroundlight;
+        color: @textcolor2;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: @textcolor3;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* -----------------------------------------------------
+ * Tray
+ * ----------------------------------------------------- */
 
 #tray {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
+    padding: 0px 15px 0px 0px;
 }
 
-#tray menu {
-  margin-top: 10px;
-  margin-left: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 0px;
-  border-radius: 10px;
-  transition: none;
-  background: #292c3c;
-  color: #bd93f9;
-  border-bottom: 3px;
-  border-style: solid;
-  border-color: #bd93f9;
-  transition: 0.3s;
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
 }
