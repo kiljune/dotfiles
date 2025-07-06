@@ -28,7 +28,6 @@
         "niri/workspaces",
         "group/links",
         //"wlr/taskbar",
-        "group/quicklinks",
         "custom/empty"
     ],
 
@@ -52,7 +51,6 @@
         "tray",
         "custom/notification",
         "custom/exit",
-        "custom/ml4w-welcome",
         "clock"
     ]
 }

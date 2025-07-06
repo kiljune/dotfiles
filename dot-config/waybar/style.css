@@ -15,15 +15,15 @@
 /* @import 'style-light.css'; */
 @import './wallust/colors-waybar.css';
 
-@define-color backgroundlight @color5;
-@define-color backgrounddark @color11;
-@define-color workspacesbackground1 @color5;
-@define-color workspacesbackground2 @color11;
-@define-color bordercolor @color11;
-@define-color textcolor1 #FFFFFF;
-@define-color textcolor2 #FFFFFF;
-@define-color textcolor3 #FFFFFF;
-@define-color iconcolor #FFFFFF;
+ @define-color backgroundlight @color5;
+ @define-color backgrounddark @color11;
+ @define-color workspacesbackground1 @color5;
+ @define-color workspacesbackground2 @color11;
+ @define-color bordercolor @color11;
+ @define-color textcolor1 @on_surface;
+ @define-color textcolor2 @on_surface;
+ @define-color textcolor3 @on_surface;
+ @define-color iconcolor @on_surface;
 
 /* -----------------------------------------------------
  * General
@@ -45,48 +45,46 @@ window#waybar {
 }
 
 /* -----------------------------------------------------
- * Workspaces
+ * orkspaces
  * ----------------------------------------------------- */
 
 #niri-workspaces,
 #workspaces {
-    background: @workspacesbackground1;
-    margin: 2px 18px 3px 1px;
-    padding: 0px 2px;
-    border-radius: 5px 5px 5px 5px;
+    margin: 5px 1px 6px 1px;
+    padding: 0px 1px;
+    border-radius: 15px;
+    border: 0px;
     font-weight: bold;
     font-style: normal;
-    opacity: 0.8;
+    font-size: 16px;
     color: @textcolor1;
 }
 
 #niri-workspaces,
 #workspaces button {
-    padding: 0px 6px;
-    margin: 3px 2px;
-    border-radius: 3px 3px 3px 3px;
-    color: @textcolor1;
-    background-color: @workspacesbackground2;
-    transition: all 0.1s linear;
-    opacity: 0.4;
+    padding: 0px 5px;
+    margin: 4px 3px;
+    border-radius: 15px;
+    border: 0px;
+    color: @textcolor3;
+		background: @workspacesbackground2;
+    transition: all 0.3s ease-in-out;
 }
 
 #niri-workspaces,
 #workspaces button.active {
     color: @textcolor1;
     background: @workspacesbackground2;
-    border-radius: 3px 3px 3px 3px;
-    min-width: 30px;
-    transition: all 0.1s linear;
-    opacity:1.0;
+    border-radius: 15px;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
 }
 
 #niri-workspaces,
 #workspaces button:hover {
     color: @textcolor1;
     background: @workspacesbackground2;
-    border-radius: 5px 5px 5px 5px;
-    opacity:0.7;
+    border-radius: 15px;
 }
 
 /* -----------------------------------------------------
