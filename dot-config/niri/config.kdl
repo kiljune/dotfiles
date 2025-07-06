@@ -2,9 +2,9 @@
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
-workspace "1"
-workspace "2"
-workspace "3"
+//workspace "1"
+//workspace "2"
+//workspace "3"
 
 environment {
 		DISPLAY ":1"
@@ -275,21 +275,22 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "dex" "-a"
-spawn-at-startup "/usr/lib/polkit-gnome-authentication-agent-1"
-spawn-at-startup "/usr/libexec/xdg-desktop-portal-gnome"
-spawn-at-startup "xwayland-satellite"
-spawn-at-startup "~/.config/waybar/launch.sh"
-spawn-at-startup "waypaper" "--restore"
-spawn-at-startup "swaync"
-spawn-at-startup "swayidle" "-w"
+//spawn-at-startup "dex" "-a"
+//spawn-at-startup "/usr/lib/polkit-gnome-authentication-agent-1"
+//spawn-at-startup "/usr/libexec/xdg-desktop-portal-gnome"
+//spawn-at-startup "xwayland-satellite"
+//spawn-at-startup "~/.config/waybar/launch.sh"
+//spawn-at-startup "waypaper" "--restore"
+//spawn-at-startup "swaync"
+//spawn-at-startup "swayidle" "-w"
+spawn-at-startup "cosmic-ext-alternative-startup"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
