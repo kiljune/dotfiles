@@ -36,7 +36,7 @@
         "memory",
         "cpu",
         "battery",
-        "pulseaudio",
+        //"pulseaudio",
         "wireplumber",
         "custom/screenshot_t",
         "tray",
@@ -67,8 +67,8 @@
     },
     "custom/screenshot_t":{
         "format":" ",
-        "on-click": "~/.config/hypr/scripts/screenshot_full",
-        "on-click-right":"~/.config/hypr/scripts/screenshot_area"
+        "on-click": "~/.config/waybar/scripts/screenshot_full",
+        "on-click-right":"~/.config/waybar/scripts/screenshot_area"
     },
 
     "clock#1": {
