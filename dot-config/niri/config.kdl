@@ -276,18 +276,16 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "dex" "-a"
-//spawn-at-startup "openrc" "--user" "gui"
-//spawn-at-startup "/usr/lib/polkit-gnome-authentication-agent-1"
+//spawn-at-startup "dex" "-a"
+spawn-at-startup "openrc" "--user" "gui"
+spawn-at-startup "/usr/lib/polkit-gnome-authentication-agent-1"
 spawn-at-startup "/usr/libexec/xdg-desktop-portal-gnome"
 //spawn-at-startup "ibus-daemon" "-rxRd"
 spawn-at-startup "xwayland-satellite"
-//spawn-at-startup "~/.config/waybar/launch.sh"
-spawn-at-startup "waybar"
+spawn-at-startup "~/.config/waybar/waybar.sh"
 //spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "swaync"
 spawn-at-startup "swayidle" "-w"
-//spawn-at-startup "cosmic-ext-alternative-startup"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
