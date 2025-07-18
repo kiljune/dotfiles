@@ -19,7 +19,6 @@
         "custom/rofi",
         "niri/workspaces",
         "niri/submap",
-        "temperature",
         //"idle_inhibitor",
         //"mpd"
         "custom/spotify"
@@ -32,6 +31,7 @@
     "modules-right": [
         "backlight",
         "custom/storage",
+        "temperature",
         "memory",
         "cpu",
         "battery",
