@@ -7,7 +7,7 @@
 
     "position": "top",
 
-    "height": 18,
+    "height": 12,
 
     "margin-left": 10,
     "margin-bottom": 0,
@@ -17,16 +17,15 @@
 
     "modules-left": [
         "custom/rofi",
-        "hyprland/workspaces",
-        "hyprland/submap",
+        "niri/workspaces",
+        "niri/submap",
         "temperature",
         //"idle_inhibitor",
         //"mpd"
         "custom/spotify"
     ],
     "modules-center": [
-        "hyprland/window",
-        "clock#date",
+        "niri/window",
         "custom/weather"
         //"custom/gammastep"
     ],
@@ -40,6 +39,7 @@
         "wireplumber",
         "custom/screenshot_t",
         "tray",
+        "clock",
         "custom/power"
     ],
 
@@ -62,7 +62,7 @@
         "format": "",
         "tooltip": false,
         "on-click-right": "nwg-drawer",
-        "on-click": "wofi --show run",
+        "on-click": "rofi -show drun",
         "on-click-middle": "pkill -9 wofi"
     },
     "custom/screenshot_t":{
@@ -297,7 +297,7 @@
         "exec": "$HOME/.config/waybar/get_kbdlayout.sh"
     },*/
 
-    "hyprland/workspaces": {
+    "niri/workspaces": {
         "all-outputs": true,
         "format": "{name}",
         "format-icons": {
@@ -312,13 +312,13 @@
             "9": "九",
             "10": "十",
         },
-        "on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
-        "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",
+        /*"on-scroll-up": "hyprctl dispatch workspace e+1 1>/dev/null",
+        "on-scroll-down": "hyprctl dispatch workspace e-1 1>/dev/null",*/
         "sort-by-number": true,
         "active-only": false,
     },
 
-    "hyprland/window": {
+    "niri/window": {
         "max-length": 100,
         "separate-outputs": true
     },
