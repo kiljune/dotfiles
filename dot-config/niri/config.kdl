@@ -11,6 +11,7 @@ environment {
 		DISPLAY ":1"
 		QT_QPA_PLATFORM "wayland"
 		ELECTRON_OZONE_PLATFORM_HINT "auto"
+    SSH_AUTH_SOCK "/usr/libexec/gcr-ssh-askpass"
 }
 
 cursor {
@@ -389,7 +390,7 @@ binds {
 		Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
 		//Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
-    Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Mod+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock" "-c" "040404"; }
 		Mod+Backspace hotkey-overlay-title="Logout: wlogout" { spawn "bash" "-c" "pgrep wlogout && pkill wlogout || wlogout"; }
 		Mod+F1 hotkey-overlay-title="Text Editor: neovide" { spawn "neovide"; }
     Mod+F2 hotkey-overlay-title="Browser: firefox" { spawn "firefox"; }
