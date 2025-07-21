@@ -291,7 +291,7 @@ spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "~/.config/waybar/waybar.sh"
 //spawn-at-startup "waypaper" "--restore"
-spawn-at-startup "swaybg" "-i" "/mnt/Backup/Themes-Icons-Fonts/Background/arkane/crystalline_gravity-d.png"
+spawn-at-startup "swaybg" "-i" "~/.config/Background/crystalline_gravity-d.png"
 spawn-at-startup "swaync"
 spawn-at-startup "swayidle" "-w"
 
