@@ -6,19 +6,19 @@
 }
 {
     "label" : "hibernate",
-    "action" : "systemctl hibernate",
+    "action" : "loginctl hibernate",
     "text" : "Hibernate",
     "keybind" : "h"
 }
 {
     "label" : "logout",
-    "action" : "hyprctl dispatch exit",
+    "action" : "loginctl logout",
     "text" : "Log Out",
     "keybind" : "e"
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "loginctl suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }
