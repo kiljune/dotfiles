@@ -84,7 +84,6 @@ window#waybar.hidden {
 #wireplumber,
 #custom-media,
 #mode,
-#idle_inhibitor,
 #mpd,
 #bluetooth,
 #custom-rofi,
@@ -292,31 +291,29 @@ label:focus {
 
 #idle_inhibitor {
     background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    border-radius: 12px;
+    padding: 3px 6px;
+    margin: 3px 6px;
 }
 
 #language {
     background: #00b093;
     color: #740864;
-    padding: 0 0px;
-    margin: 0 5px;
+    padding: 3px 6px;
+    margin: 0px 0px;
     min-width: 16px;
 }
 
 #keyboard-state {
     background: #97e1ad;
     color: #000000;
-    padding: 0 0px;
-    margin: 0 5px;
+    padding: 3px 6px;
+    margin: 0px 0px;
     min-width: 16px;
 }
 
 #keyboard-state > label {
-    padding: 0 0px;
+    padding: 3px 6px;
 }
 
 #keyboard-state > label.locked {
