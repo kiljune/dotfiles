@@ -26,7 +26,7 @@
         "niri/window",
     ],
     "modules-right": [
-        "custom/weather",
+        //"custom/weather",
         //"custom/gammastep",
         "backlight",
         "custom/storage",
