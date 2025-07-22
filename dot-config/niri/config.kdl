@@ -8,10 +8,24 @@ workspace "2"
 workspace "3"
 
 environment {
-		DISPLAY ":1"
+    LD_PRELOAD ""
+    MOZ_ENABLE_WAYLAND "1"
+    MOZ_DBUS_REMODE "1"
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
+    XDG_SESSION_DESKTOP "niri"
+    GDK_BACKEND "wayland"
+    CLUTTER_BACKEND "wayland"
+    CURRENT_BACKEND "wayland"
+    TERM "kitty"
+    TERMINAL "kitty"
+    EGL_FLATFORM "wayland"
 		QT_QPA_PLATFORM "wayland"
+    QT_AUTO_SCREEN_SCALE_FACTOR "1"
+    QT_WAYLAND_FORCE_DPI "physical"
+    QT_QPA_PLATFORMTHEME "qt6ct"
 		ELECTRON_OZONE_PLATFORM_HINT "auto"
-    SSH_AUTH_SOCK "/usr/libexec/gcr-ssh-askpass"
+    //SSH_AUTH_SOCK "/usr/libexec/gcr-ssh-askpass"
 }
 
 cursor {
@@ -123,9 +137,9 @@ output "DP-1" {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 8
+    gaps 3
 
-    always-center-single-column
+    //always-center-single-column
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -133,7 +147,7 @@ layout {
     // - "always", the focused column will always be centered.
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
-    center-focused-column "on-overflow"
+    center-focused-column "never"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -168,14 +182,15 @@ layout {
     //
     // Alternatively, you can override it with a window rule called
     // `draw-border-with-background`.
+    background-color "transparent"
 
     // You can change how the focus ring looks.
     focus-ring {
         // Uncomment this line to disable the focus ring.
-        // off
+        off
 
         // How many logical pixels the ring extends out from the windows.
-        width 3
+        // width 3
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -183,10 +198,10 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        // active-color "#7fc8ff"
 
         // Color of the ring on inactive monitors.
-        inactive-color "#505050"
+        // inactive-color "#505050"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -208,16 +223,16 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
+        // off
 
         width 3
-        active-color "#ffc87f"
-        inactive-color "#505050"
+        // active-color "#ffc87f"
+        inactive-color "#04404A"
 
         // Color of the border around windows that request your attention.
-        urgent-color "#9b0000"
-
-        // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
+        // urgent-color "#9b0000"
+        active-gradient from="#0DB7D4" to="#9778D0" angle=90
+        // active-gradient from="#80c8ff" to="#bbddff" angle=45 relative-to="workspace-view"
         // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
     }
 
