@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "swaylock -i ~/.config/Background/crystalline_gravity-d.png",
     "text" : "Lock",
     "keybind" : "l"
 }
