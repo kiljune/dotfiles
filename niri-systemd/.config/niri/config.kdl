@@ -16,7 +16,6 @@ environment {
     XDG_SESSION_DESKTOP "niri"
     GDK_BACKEND "wayland"
     CLUTTER_BACKEND "wayland"
-    CURRENT_BACKEND "wayland"
     TERM "kitty"
     TERMINAL "kitty"
     EGL_FLATFORM "wayland"
@@ -25,7 +24,7 @@ environment {
     QT_WAYLAND_FORCE_DPI "physical"
     QT_QPA_PLATFORMTHEME "qt6ct"
 		ELECTRON_OZONE_PLATFORM_HINT "auto"
-    //SSH_AUTH_SOCK "/usr/libexec/gcr-ssh-askpass"
+    _JAVA_AWT_WM_NONREPARENTING "1"
 }
 
 cursor {
@@ -159,6 +158,7 @@ layout {
         proportion 0.5
         proportion 0.66667
         proportion 0.75
+        proportion 1.0
 
         // Fixed sets the width in logical pixels exactly.
         // fixed 1920
@@ -279,11 +279,16 @@ layout {
     // Top and bottom struts will simply add outer gaps in addition to the area occupied by
     // layer-shell panels and regular gaps.
     struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
+        left 0
+        right 0
+        top 2
+        bottom 2
     }
+}
+
+layer-rule {
+    match namespace="^swww-daemon$"
+    place-within-backdrop true
 }
 
 // Add lines like this to spawn processes at startup.
@@ -292,13 +297,15 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "dex" "-a"
-spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome"
+//spawn-at-startup "dex" "-a"
+//spawn-at-startup "~/.config/waybar/waybar.sh"
+//spawn-at-startup "swaybg" "-i" "/home/kiljune/.config/Background/crystalline_gravity-d.png"
+//spawn-at-startup "swaync"
+//spawn-at-startup "swayidle" "-w"
+spawn-at-startup "pikabar"
+spawn-at-startup "systemctl" "--user" "enable" "--now" "hypridle"
+spawn-at-startup "swww-daemon"
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "~/.config/waybar/waybar.sh"
-spawn-at-startup "swaybg" "-i" "/home/kiljune/.config/Background/crystalline_gravity-d.png"
-spawn-at-startup "swaync"
-spawn-at-startup "swayidle" "-w"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -359,6 +366,17 @@ window-rule {
 
     // Use this instead if you want them visible on third-party screenshot tools.
     // block-out-from "screencast"
+}
+
+window-rule {
+    match app-id="^(steam_app_.*)$"
+    variable-refresh-rate true
+    open-fullscreen true
+}
+
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
 }
 
 // Example: enable rounded corners for all windows.
