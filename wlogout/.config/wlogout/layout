@@ -1,36 +1,36 @@
 {
     "label" : "lock",
-    "action" : "swaylock -i ~/.config/Background/crystalline_gravity-d.png",
+    "action" : "loginctl lock-session",
     "text" : "Lock",
     "keybind" : "l"
 }
 {
     "label" : "hibernate",
-    "action" : "loginctl hibernate",
+    "action" : "doas zzz -Z",
     "text" : "Hibernate",
     "keybind" : "h"
 }
 {
     "label" : "logout",
-    "action" : "loginctl logout",
-    "text" : "Log Out",
+    "action" : "loginctl terminate-user $USER",
+    "text" : "Logout",
     "keybind" : "e"
 }
 {
+    "label" : "shutdown",
+    "action" : "doas poweroff",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
     "label" : "suspend",
-    "action" : "loginctl suspend",
+    "action" : "doas zzz",
     "text" : "Suspend",
     "keybind" : "u"
 }
 {
     "label" : "reboot",
-    "action" : "loginctl reboot",
-    "text" : "Restart",
+    "action" : "doas reboot",
+    "text" : "Reboot",
     "keybind" : "r"
-}
-{
-    "label" : "shutdown",
-    "action" : "loginctl poweroff",
-    "text" : "Power Off",
-    "keybind" : "s"
 }
