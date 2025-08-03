@@ -299,7 +299,7 @@ spawn-at-startup "dex" "/etc/xdg/autostart/polkit-gnome-authentication-agent-1.d
 spawn-at-startup "dex" "/etc/xdg/autostart/nm-applet.desktop"
 spawn-at-startup "dex" "/etc/xdg/autostart/blueman.desktop"
 spawn-at-startup "openrc" "--user" "gui"
-spawn-at-startup "/usr/lib/xdg-desktop-portal-gnome"
+spawn-at-startup "dex" "/usr/share/applications/xdg-desktop-portal-gnome.desktop"
 spawn-at-startup "xwayland-satellite"
 spawn-at-startup "~/.config/waybar/waybar.sh"
 spawn-at-startup "swaybg" "-i" "/home/kiljune/Pictures/Background/crystalline_gravity-d.png"
@@ -311,7 +311,7 @@ spawn-at-startup "swayidle" "-w"
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-prefer-no-csd
+// prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
