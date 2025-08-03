@@ -38,7 +38,7 @@
         "wireplumber",
         "custom/screenshot_t",
         "clock",
-        "idle_inhibitor",
+        //"idle_inhibitor",
         "tray",
         "custom/power"
     ],
