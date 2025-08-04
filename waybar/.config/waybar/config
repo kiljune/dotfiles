@@ -7,11 +7,11 @@
 
     "position": "top",
 
-    "height": 12,
+    "height": 42,
 
-    "margin-left": 10,
+    "margin-left": 0,
     "margin-bottom": 0,
-    "margin-right": 10,
+    "margin-right": 0,
 
     "spacing": 5, // Gaps between modules (4px)
 
