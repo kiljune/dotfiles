@@ -90,16 +90,6 @@ button:hover {
   padding-right: 4px;
 }
 
-#clock {
-    color: @maroon;
-    border-bottom: 2px solid @maroon;
-}
-
-#clock.date {
-    color: @mauve;
-    border-bottom: 2px solid @mauve;
-}
-
 #pulseaudio {
     color: @blue;
     border-bottom: 2px solid @blue;

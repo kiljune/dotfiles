@@ -18,8 +18,8 @@
     "modules-left": [
         "custom/rofi",
         "niri/workspaces",
-        "niri/submap",
-        "mpd",
+        //"niri/submap",
+        //"mpd",
         "custom/spotify"
     ],
     "modules-center": [
